@@ -92,3 +92,22 @@ td, th {
   margin-top: 10px;
   color: #fff;
 }
+
+@media screen and (max-width: 768px) {
+  .select-options {
+    left: 38%;  
+  }
+  .square-box {
+    width: 6%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .select-options {
+    left: 36%;  
+  }
+  .square-box {
+    width: 8%;
+  }
+}
