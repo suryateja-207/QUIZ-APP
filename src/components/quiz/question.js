@@ -7,7 +7,8 @@ class Question extends Component {
   handleChange = (value, index) => {
     const { setCurrent, setScore, question, current, score, setQuestions } = this.props;
     setCurrent(current + 1);
-    setQuestions(index, value);
+    question.selectedAnswer = value;
+    setQuestions(index, question);
     if (question.answer === value) {
       setScore(score + 1);
     }

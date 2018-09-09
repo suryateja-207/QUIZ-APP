@@ -37,10 +37,13 @@ class App extends Component {
     this.setState({score});
   }
   
-  setQuestions = (index, selected) => {
-    let questions = JSON.parse(JSON.stringify(this.state.questions));
-    questions[index - 1].selectedAnswer = selected;
-    this.setState({ questions });
+  setQuestions = (index, question) => {
+    const questionsLength = this.state.questions.length;
+    this.setState({ questions: [
+      ...this.state.questions.slice(0,index -1),
+      Object.assign({}, this.state.questions[index-1], question),
+      ...this.state.questions.slice(index, questionsLength)
+   ]});
   } 
 
   render() {
